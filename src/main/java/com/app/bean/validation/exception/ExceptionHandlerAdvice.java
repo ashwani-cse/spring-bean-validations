@@ -1,4 +1,4 @@
-package com.app.bean.validation;
+package com.app.bean.validation.exception;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.MissingRequestHeaderException;
