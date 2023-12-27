@@ -26,6 +26,24 @@ This controller handles operations related to a shopping cart. It includes an en
 
 **Endpoint:**
 - `POST /cart/`: Creates a cart using JSON request body and validates the input. Expects a "affiliate" header with a pattern constraint.
+- Valid Payload: <br/>
+```
+{
+    "storeId": 1,
+    "amount": 90000,
+    "quantity": 1,
+    "cartPromotions": [
+        "promo1",
+        "promo2"
+    ],
+    "cartMenuItems": [
+        {
+            "baseProductId": "123",
+            "name": "cart item1"
+        }
+    ]
+}
+```
 
 ## Important Notes-
 ### @Valid: 
@@ -33,4 +51,4 @@ This controller handles operations related to a shopping cart. It includes an en
 - `@Valid` annotation is useful when you have nested objects or collections that need validation.
 -  Suppose `Cart` having `Menu` then we can use `@Valid` on that specific filed or Controller method like `@Valid @RequestBody Cart cart`
 - In this case, for header field affiliate `@Pattern` is sufficient no need to use `@Valid` annotation.
-- `@Valid` is required if we have used any validation like `@NotNull`, `@NotBlank` etc. They will not work until we use `@Valid`.
+- `@Valid` is required if we have used any validation like `@NotNull`, `@NotBlank` etc. They will not work until we use `@Valid` while referencing Class anywhere.

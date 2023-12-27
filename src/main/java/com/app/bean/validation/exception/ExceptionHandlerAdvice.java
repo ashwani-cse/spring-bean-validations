@@ -30,7 +30,7 @@ public class ExceptionHandlerAdvice {
     }
 
     /*
-     * If jakarta validation fails on any field of Cart
+     * If jakarta validations like NotNull, NotEmpty fails on any field of Cart
      * */
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public String handleMethodArgumentNotValidException(MethodArgumentNotValidException exception) {
