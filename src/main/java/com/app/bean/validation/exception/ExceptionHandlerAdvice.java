@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.HandlerMethodValidationException;
 
+/**
+ * @author Ashwani Kumar
+ * Created on 27/12/23.
+ */
 @Slf4j
 @RestControllerAdvice
 public class ExceptionHandlerAdvice {

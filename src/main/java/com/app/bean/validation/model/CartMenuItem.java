@@ -5,6 +5,10 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
+/**
+ * @author Ashwani Kumar
+ * Created on 27/12/23.
+ */
 @Data
 public class CartMenuItem {
 
