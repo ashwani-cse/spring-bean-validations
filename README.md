@@ -6,8 +6,8 @@ This project is a Spring Boot application that demonstrates the use of bean vali
 
 ### Technologies Used
 - Java 17
-- Spring Boot 3.2.1
-- Maven
+- [Spring Boot](https://spring.io/projects/spring-boot) 3.2.1
+- [Maven](https://maven.apache.org/)
 
 ### Dependencies
 - **spring-boot-starter-web:** Spring Boot starter for building web applications.
@@ -44,6 +44,55 @@ This controller handles operations related to a shopping cart. It includes an en
     ]
 }
 ```
+### LoginController
+
+This controller demonstrates method-level parameter validations for user login.
+
+**Endpoint:**
+
+- `GET /login`: Validates the "username" parameter using `@NotBlank` and returns a response.
+
+## Exception Handling
+
+The `ExceptionHandlerAdvice` class provides handling for various validation-related exceptions:
+
+- `MissingRequestHeaderException`: Handles missing request headers.
+- `HandlerMethodValidationException`: Handles pattern validation failures.
+- `MethodArgumentNotValidException`: Handles Jakarta validations like `@NotNull`, `@NotEmpty` failures on any field of the `Cart` model.
+
+## Models
+
+### Cart
+
+Represents a shopping cart with validation annotations on its fields.
+
+### CartMenuItem
+
+Represents an item within the shopping cart with validation annotations on its fields.
+
+## Usage
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/ashwani-cse/spring-bean-validations.git
+    ```
+
+2. Build the project:
+
+    ```bash
+    mvn clean install
+    ```
+
+3. Run the application:
+
+    ```bash
+    mvn spring-boot:run
+    ```
+
+4. Access the API:
+
+   Open a web browser or a tool like [Postman](https://www.postman.com/) and make a GET request to `http://localhost:8080/{cartId}`. Ensure to provide the `affiliate` header with a valid value.
 
 ## Important Notes-
 ### @Valid: 
@@ -52,3 +101,11 @@ This controller handles operations related to a shopping cart. It includes an en
 -  Suppose `Cart` having `Menu` then we can use `@Valid` on that specific filed or Controller method like `@Valid @RequestBody Cart cart`
 - In this case, for header field affiliate `@Pattern` is sufficient no need to use `@Valid` annotation.
 - `@Valid` is required if we have used any validation like `@NotNull`, `@NotBlank` etc. They will not work until we use `@Valid` while referencing Class anywhere.
+
+## Social Profile  
+- [LinkedIn](https://www.linkedin.com/in/ashwanicse/)
+- [Leetcode](https://leetcode.com/ashwani__kumar/)
+- [Topmate](https://topmate.io/ashwanikumar)
+## Linkedin Newsletter
+- [Subscribe](https://www.linkedin.com/newsletters/7084124970443767808/)
+  
